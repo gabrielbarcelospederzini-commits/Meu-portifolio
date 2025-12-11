@@ -21,6 +21,12 @@ Um dashboard interativo para análise de acessos, com filtros por período, usu�
 📁 Código-fonte
 https://github.com/gabrielbarcelospederzini-commits/Meu-portifolio/commit/0f8f84db631f09ee617f96af4cfb60eb23402484
 
+
+
+---
+
+
+
 Projeto - 2
 
 🎥 Sistema de Monitoramento Inteligente com IA  
@@ -65,9 +71,6 @@ Este projeto combina **visão computacional**, **backend web** e **persistência
 ---
 📁 Código-fonte
 https://github.com/gabrielbarcelospederzini-commits/Meu-portifolio/commit/a7ede6d68cabd6123382dae89c4e47a7d3eca34c
-
-
-
 
 
 📫 Contato
