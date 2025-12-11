@@ -19,6 +19,7 @@ Um dashboard interativo para análise de acessos, com filtros por período, usu�
 [👉 Assista ao vídeo do projeto](https://youtube.com/shorts/GUm2AFITHSo?feature=share)
 
 📁 Código-fonte
+https://github.com/gabrielbarcelospederzini-commits/Meu-portifolio/commit/0f8f84db631f09ee617f96af4cfb60eb23402484
 
 Projeto - 2
 
@@ -62,6 +63,7 @@ Este projeto combina **visão computacional**, **backend web** e **persistência
 | **NumPy** | Manipulação de matrizes/imagens |
 
 ---
+📁 Código-fonte
 
 
 
