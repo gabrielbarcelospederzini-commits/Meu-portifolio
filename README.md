@@ -20,6 +20,52 @@ Um dashboard interativo para análise de acessos, com filtros por período, usu�
 
 📁 Código-fonte
 
+Projeto - 2
+
+🎥 Sistema de Monitoramento Inteligente com IA  
+Aplicação desenvolvida com **Python, Flask, YOLOv8 e PostgreSQL**, capaz de detectar pessoas, carros e cachorros em tempo real, registrar eventos no banco de dados e permitir o controle da câmera via interface web.
+
+Este projeto combina **visão computacional**, **backend web** e **persistência de dados**, oferecendo uma solução completa para segurança, controle e análise de eventos monitorados,tendo em vista que, o mesmo emite um som de alerta caso dentifique algo fora do padrão.
+
+---
+
+ 🚀 Funcionalidades
+
+✔ Detecção em tempo real de **pessoas, carros e cachorros, entre outros** usando YOLOv8  
+✔ Streaming de vídeo via **Flask**  
+✔ Registro automático no banco de dados (PostgreSQL) a cada detecção  
+✔ Log de eventos como:
+- objeto detectado  
+- câmera ligada/desligada  
+- timestamp da ocorrência  
+
+✔ API com rotas para:
+- status da detecção  
+- histórico recente  
+- alternar câmera  
+
+✔ Front-end simples com atualização automática  
+✔ Sistema modular e escalável  
+
+---
+
+ 🧠 Tecnologias Utilizadas
+
+| Tecnologia | Uso |
+|-----------|-----|
+| **Python** | Linguagem principal |
+| **Flask** | Backend e rotas HTTP |
+| **OpenCV** | Captura da webcam e manipulação dos frames |
+| **YOLOv8 (Ultralytics)** | Detecção de objetos em tempo real |
+| **PostgreSQL** | Armazenamento das detecções |
+| **dotenv** | Variáveis de ambiente |
+| **NumPy** | Manipulação de matrizes/imagens |
+
+---
+
+
+
+
 
 
 📫 Contato
