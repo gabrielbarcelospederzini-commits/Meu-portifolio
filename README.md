@@ -72,6 +72,51 @@ Este projeto combina **visão computacional**, **backend web** e **persistência
 📁 Código-fonte
 https://github.com/gabrielbarcelospederzini-commits/Meu-portifolio/commit/a7ede6d68cabd6123382dae89c4e47a7d3eca34c
 
+---
+Projeto - 3
+
+Chatbot Integrado com Google Sheets
+
+
+
+
+Desenvolvi um chatbot estruturado por fluxograma, com integração ao Google Sheets, permitindo o armazenamento e consulta de dados em tempo real, automatizando processos internos e otimizando o fluxo de trabalho.
+
+O projeto evidencia competências em:
+
+Python – desenvolvimento do chatbot e lógica de conversação.
+
+APIs REST e Google Sheets API – integração e manipulação de dados externos.
+
+Automação de processos – redução de retrabalho e aumento de eficiência operacional.
+
+Modelagem de fluxos de conversa – planejamento estruturado da lógica do chatbot.
+
+
+---
+
+
+O projeto está em andamento. Para visualizar funcionalidades já implementadas, consulte os dados existentes em:
+
+Controle de Acesso (aba Segurança Empresarial) – registrar solicitações
+
+Restaurante (aba Infraestrutura)
+
+---
+
+Link - chat bot (ArcelorMittal) 
+https://share.chatling.ai/s/Y697PN5QKnAQ6Aa 
+
+
+---
+
+![Fluxograma] (https://arcelormittal-my.sharepoint.com/:i:/g/personal/gabriel_pederzini_arcelormittal_com_br/IQDjlFvctny-Q5oZK_iUWWzvAeYPB3wU6bEUcJONCjsTJUE?e=Ra70SD)
+
+
+
+
+
+
 
 📫 Contato
 - Instagram: Gabrielpederzini__
