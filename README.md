@@ -84,13 +84,13 @@ Desenvolvi um chatbot estruturado por fluxograma, com integração ao Google She
 
 O projeto evidencia competências em:
 
-Python – desenvolvimento do chatbot e lógica de conversação.
+- Python – desenvolvimento do chatbot e lógica de conversação.
 
-APIs REST e Google Sheets API – integração e manipulação de dados externos.
+- APIs REST e Google Sheets API – integração e manipulação de dados externos.
 
-Automação de processos – redução de retrabalho e aumento de eficiência operacional.
+- Automação de processos – redução de retrabalho e aumento de eficiência operacional.
 
-Modelagem de fluxos de conversa – planejamento estruturado da lógica do chatbot.
+- Modelagem de fluxos de conversa – planejamento estruturado da lógica do chatbot.
 
 
 ---
@@ -110,11 +110,12 @@ https://share.chatling.ai/s/Y697PN5QKnAQ6Aa
 
 ---
 
+
 ![Fluxograma] (https://arcelormittal-my.sharepoint.com/:i:/g/personal/gabriel_pederzini_arcelormittal_com_br/IQDjlFvctny-Q5oZK_iUWWzvAeYPB3wU6bEUcJONCjsTJUE?e=Ra70SD)
 
 
 
-
+---
 
 
 
