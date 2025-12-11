@@ -1,0 +1,251 @@
+import cv2
+import numpy as np
+from ultralytics import YOLO
+from flask import Flask, render_template, Response, jsonify
+import psycopg2
+from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# Carrega o modelo YOLOv8 (nano)
+modelo = YOLO("yolov8n.pt")
+
+app = Flask(_name_)
+
+# --- Configurações do PostgreSQL ---
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+
+conn = None # Conexão global com o banco de dados
+
+def get_db_connection():
+    """Tenta estabelecer uma conexão com o banco de dados PostgreSQL."""
+    try:
+        connection = psycopg2.connect(
+            dbname=DB_NAME,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            host=DB_HOST,
+            port=DB_PORT
+        )
+        print("Conexão bem-sucedida ao PostgreSQL!")
+        return connection
+    except psycopg2.Error as e:
+        print(f"Erro ao conectar ao PostgreSQL: {e}")
+        return None
+
+def create_detections_table():
+    """Cria a tabela de detecções se ela não existir."""
+    global conn
+    if conn is None:
+        conn = get_db_connection()
+        if conn is None:
+            return
+
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS detections (
+                    id SERIAL PRIMARY KEY,
+                    object_detected BOOLEAN NOT NULL,
+                    camera_on BOOLEAN NOT NULL,
+                    detection_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                );
+            """)
+            conn.commit()
+            print("Tabela 'detections' verificada/criada com sucesso.")
+    except psycopg2.Error as e:
+        print(f"Erro ao criar/verificar tabela 'detections': {e}")
+        if conn:
+            conn.rollback() # Reverte a transação em caso de erro
+
+# Inicializa a conexão e cria a tabela ao iniciar a aplicação
+with app.app_context():
+    create_detections_table()
+
+# --- Variáveis globais para o estado da aplicação e controle de logging ---
+obj_detectado = False
+camera_ligada = True
+prev_obj_detectado = False # Para registrar mudanças no status de detecção
+prev_camera_ligada = True  # Para registrar mudanças no status da câmera
+
+# Inicia a webcam
+cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("Erro ao acessar a webcam. Verifique se ela está conectada e disponível.")
+    # Define camera_ligada como False se a câmera não puder ser aberta
+    camera_ligada = False
+
+
+def log_detection_event(detected_status, camera_status):
+    """Registra um evento de detecção no banco de dados."""
+    global conn
+    if conn is None:
+        conn = get_db_connection()
+        if conn is None:
+            print("Não foi possível logar o evento: conexão com o DB não estabelecida.")
+            return
+
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO detections (object_detected, camera_on) VALUES (%s, %s);",
+                (detected_status, camera_status)
+            )
+            conn.commit()
+            print(f"Evento de detecção logado: Objeto Detectado={detected_status}, Câmera Ligada={camera_status}")
+    except psycopg2.Error as e:
+        print(f"Erro ao inserir evento no DB: {e}")
+        if conn:
+            conn.rollback()
+
+# --- Função geradora para capturar frames da webcam ---
+def gen_frames():
+    global obj_detectado, camera_ligada, prev_obj_detectado, prev_camera_ligada
+
+    # Log inicial do estado da câmera ao iniciar o feed
+    if prev_camera_ligada != camera_ligada:
+        log_detection_event(obj_detectado, camera_ligada)
+        prev_camera_ligada = camera_ligada
+
+    while True:
+        current_camera_status = camera_ligada
+
+        # Se o status da câmera mudou, loga o evento
+        if current_camera_status != prev_camera_ligada:
+            log_detection_event(obj_detectado, current_camera_status)
+            prev_camera_ligada = current_camera_status
+
+        if not current_camera_status:
+            # Frame preto com texto "Câmera desligada"
+            frame = np.zeros((480, 640, 3), dtype=np.uint8)
+            cv2.putText(frame, "Câmera desligada", (100, 240),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame_bytes = buffer.tobytes()
+
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+            continue
+
+        ret, frame = cap.read()
+        if not ret:
+            # Se a câmera parou de funcionar durante a execução
+            print("Falha ao ler frame da webcam. Encerrando feed.")
+            # Opcional: logar que a câmera desligou inesperadamente
+            if prev_camera_ligada: # Se estava ligada antes
+                log_detection_event(obj_detectado, False)
+                prev_camera_ligada = False
+            break
+
+        resultados = modelo(frame, verbose=False)[0]
+        detectou_na_iteracao = False
+
+        for box in resultados.boxes:
+            classe = int(box.cls[0])
+            nome_classe = modelo.names[classe]
+
+            # Verifica se a classe é uma das que queremos detectar e desenha a bounding box
+            if nome_classe in ["person", "dog", "car"]:
+                detectou_na_iteracao = True
+                x1, y1, x2, y2 = map(int, box.xyxy[0])
+                color = (255, 0, 0) # Azul para pessoa
+                if nome_classe == "dog":
+                    color = (255, 165, 0) # Laranja para cachorro
+                elif nome_classe == "car":
+                    color = (153, 51, 153) # Roxo para carro
+
+                cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+                cv2.putText(frame, nome_classe, (x1, y1 - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+
+        # Atualiza o estado global de detecção
+        if detectou_na_iteracao != obj_detectado:
+            obj_detectado = detectou_na_iteracao
+            log_detection_event(obj_detectado, current_camera_status) # Loga a mudança de estado
+
+        ret, buffer = cv2.imencode('.jpg', frame)
+        frame_bytes = buffer.tobytes()
+
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+
+
+# --- ROTAS DA APLICAÇÃO FLASK ---
+
+@app.route('/')
+def index():
+    """Renderiza a página principal da aplicação."""
+    return render_template('index.html')
+
+@app.route('/video_feed')
+def video_feed():
+    """Fornece o stream de vídeo da webcam para o navegador."""
+    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/status')
+def status():
+    """Retorna o status atual de detecção de objetos."""
+    return jsonify({"obj_detectado": obj_detectado})
+
+@app.route('/toggle_camera', methods=['POST'])
+def toggle_camera():
+    """Alterna o estado da câmera (ligar/desligar)."""
+    global camera_ligada
+    # Loga o estado antes da mudança se a câmera estava ligada e vai desligar
+    # ou se estava desligada e vai ligar
+    if camera_ligada != (not camera_ligada): # Sempre True, mas a lógica é para registrar a mudança
+        log_detection_event(obj_detectado, not camera_ligada) # Loga o estado futuro da câmera
+
+    camera_ligada = not camera_ligada
+    print(f"Status da câmera alterado para: {camera_ligada}")
+    return jsonify({"camera_ligada": camera_ligada})
+
+@app.route('/get_detections')
+def get_detections():
+    """Retorna os últimos eventos de detecção do banco de dados."""
+    global conn
+    if conn is None:
+        conn = get_db_connection() # Tenta reconectar se a conexão caiu
+        if conn is None:
+            return jsonify({"error": "Erro ao conectar ao banco de dados"}), 500
+
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT object_detected, camera_on, detection_timestamp FROM detections ORDER BY detection_timestamp DESC LIMIT 10;"
+            )
+            records = cur.fetchall()
+            # Formata os resultados para JSON
+            detections_list = [
+                {
+                    "object_detected": r[0],
+                    "camera_on": r[1],
+                    "timestamp": r[2].isoformat() # Converte datetime para string ISO
+                } for r in records
+            ]
+            return jsonify(detections_list)
+    except psycopg2.Error as e:
+        print(f"Erro ao buscar detecções do DB: {e}")
+        return jsonify({"error": f"Erro ao buscar detecções: {e}"}), 500
+
+if _name_ == '_main_':
+    # Libera a webcam e destrói janelas ao fechar a aplicação
+    def cleanup():
+        if cap.isOpened():
+            cap.release()
+        cv2.destroyAllWindows()
+        if conn:
+            conn.close()
+            print("Conexão ao PostgreSQL fechada.")
+
+    import atexit
+    atexit.register(cleanup)
+
+    app.run(debug=True, host='0.0.0.0') # '0.0.0.0' para permitir acesso externo se necessário
