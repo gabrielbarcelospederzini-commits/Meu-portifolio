@@ -122,17 +122,13 @@ moneyfind/
 bash
 Copiar código
 
-### 🚀 Como executar
-```bash
+## Como executar o projeto:
+
 git clone https://github.com/modasby/moneyfind.git
 cd moneyfind/frontend
 npm install
 npm start
 npm run android
-🤖 Modelos de Machine Learning
-model.tflite — Modelo principal
-
-best_float32.tflite — Modelo otimizado
 
 
 ------
