@@ -134,6 +134,10 @@ model.tflite — Modelo principal
 
 best_float32.tflite — Modelo otimizado
 
+
+------
+
+
 📫 Contato
 📸 Instagram: @Gabrielpederzini__
 🔗 LinkedIn: https://www.linkedin.com/in/gabriel-pederzini-844304296
