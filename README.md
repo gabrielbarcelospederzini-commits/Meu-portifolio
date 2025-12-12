@@ -135,6 +135,9 @@ npm run android
 
 
 📫 Contato
+
 📸 Instagram: @Gabrielpederzini__
+
 🔗 LinkedIn: https://www.linkedin.com/in/gabriel-pederzini-844304296
+
 📧 E-mail: gabrielbarcelospederzini@gmail.com
