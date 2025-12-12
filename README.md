@@ -108,10 +108,15 @@ Construído com **React Native** e **TensorFlow Lite**, o app reconhece notas at
 ### 📂 Estrutura do Projeto
 moneyfind/
 ├── backend/ # Modelos de ML
-├── frontend/ # Aplicativo em React Native
+
+├──frontend/ # Aplicativo em React Native
+
 │ ├── android/
+
 │ ├── App.tsx
+
 │ └── assets/
+
 └── README.md
 
 bash
