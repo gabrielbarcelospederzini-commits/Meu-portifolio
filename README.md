@@ -125,9 +125,13 @@ Copiar código
 ## Como executar o projeto:
 
 git clone https://github.com/modasby/moneyfind.git
+
 cd moneyfind/frontend
+
 npm install
+
 npm start
+
 npm run android
 
 
