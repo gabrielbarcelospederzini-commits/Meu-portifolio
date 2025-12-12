@@ -88,51 +88,81 @@ https://share.chatling.ai/s/Y697PN5QKnAQ6Aa
 
 ---
 
-## 🔹 Projeto 4 — Notevision (MoneyFind)
+# Notevision (MoneyFind)
 
-### 📱 Visão Geral  
-Aplicativo mobile desenvolvido para auxiliar **pessoas com deficiência visual** a identificar cédulas de dinheiro usando modelos de Machine Learning em tempo real.
+## 📱 Visão Geral
 
-Construído com **React Native** e **TensorFlow Lite**, o app reconhece notas através da câmera do dispositivo e fornece feedback por áudio.
+Notevision é um aplicativo desenvolvido para auxiliar deficientes visuais a identificar cédulas de dinheiro usando modelos de aprendizado de máquina em tempo real. Construído com React Native e TensorFlow Lite, o aplicativo oferece uma solução acessível e eficiente para reconhecer notas monetárias através da câmera do dispositivo.
 
-### ✨ Funcionalidades
-- Detecção precisa via câmera  
-- Execução **offline** utilizando TFLite  
-- Feedback de áudio com o valor detectado  
+## ✨ Funcionalidades
 
-### 🛠 Tecnologias Utilizadas
-- **Frontend:** React Native, TypeScript  
-- **ML Engine:** TensorFlow Lite (.tflite), YOLOv8  
-- **Plataforma:** Android  
+- **Detecção precisa**: Usa a câmera do dispositivo para detectar dinheiro instantaneamente.
+- **Capacidade Offline**: Executa modelos TensorFlow Lite localmente no dispositivo.
+- **Feedback de Áudio**: Anuncia o valor detectado.
 
-### 📂 Estrutura do Projeto
+## 🛠️ Tecnologias Utilizadas
+
+- **Frontend**: React Native, TypeScript
+- **Motor de ML**: TensorFlow Lite (modelos `.tflite`), YoloV8
+- **Plataforma**: Android (atualmente)
+
+## 📂 Estrutura do Projeto
+
+```
 moneyfind/
-├── backend/ # Modelos de ML
+├── backend/           # Modelos de ML (arquivos tflite)
+├── frontend/          # Código fonte do aplicativo React Native
+│   ├── android/       # Arquivos nativos do projeto Android
+│   ├── App.tsx        # Ponto de entrada principal da aplicação
+│   └── assets/        # Imagens e outros ativos estáticos
+└── README.md          # Documentação do projeto
+```
 
-├──frontend/ # Aplicativo em React Native
+## 🚀 Começando
 
-│ ├── android/
+### Pré-requisitos
 
-│ ├── App.tsx
+- Node.js & npm/yarn
+- Java Development Kit (JDK)
+- Android Studio & Android SDK
+- React Native CLI
 
-│ └── assets/
+### Instalação
 
-└── README.md
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/modasby/moneyfind.git
+   cd moneyfind
+   ```
 
-bash
-Copiar código
+2. **Instale as dependências**
+   ```bash
+   cd frontend
+   npm install
+   # ou
+   yarn install
+   ```
 
-## Como executar o projeto:
+### Executando o App
 
-git clone https://github.com/modasby/moneyfind.git
+1. **Inicie o Metro Bundler**
+   ```bash
+   cd frontend
+   npm start
+   ```
 
-cd moneyfind/frontend
+2. **Execute no Android**
+   Abra um novo terminal e execute:
+   ```bash
+   cd frontend
+   npm run android
+   ```
 
-npm install
+## 🤖 Modelos de Machine Learning
 
-npm start
-
-npm run android
+O aplicativo usa modelos `.tflite` localizados no diretório `backend/`.
+- `model.tflite`: Modelo de detecção primário.
+- `best_float32.tflite`: Modelo de ponto flutuante otimizado.
 
 
 ------
