@@ -64,7 +64,7 @@ O sistema registra automaticamente eventos no banco de dados, oferece streaming 
 
 ---
 
-## 🔹 Projeto 3 — Chatbot Integrado com Google Sheets
+## 🔹 Projeto 3 — Chatbot Integrado com Google Sheets (ArcelorMittal)
 
 Chatbot construído a partir de um fluxograma, integrado ao Google Sheets para registro e consulta de informações em tempo real.  
 O objetivo é automatizar processos internos e aumentar a eficiência operacional.
