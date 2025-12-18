@@ -117,11 +117,7 @@ def load_data(file, ext):
         return pd.read_excel(file)
     else:
         raise ValueError("Formato de arquivo não suportado")
-
-
-uploaded_file = st.file_uploader(
-    "📂 Faça upload de um arquivo CSV ou Excel",
-    type=["csv", "xls", "xlsx"]
+        
 )
 
 
