@@ -98,7 +98,7 @@ if uploaded_file:
     )
 
 else:
-    st.info("👆 Faça upload de um arquivo CSV ou Excel para começar")import streamlit as st
+    st.info("👆 Faça upload de um arquivo CSV ou Excel para começar")
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
