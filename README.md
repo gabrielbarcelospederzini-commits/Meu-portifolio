@@ -167,6 +167,84 @@ O aplicativo usa modelos `.tflite` localizados no diretório `backend/`.
 
 ------
 
+# 📊 Analisador Inteligente de Arquivos (CSV / Excel)
+
+Aplicação web interativa desenvolvida com **Streamlit** para análise rápida e visual de arquivos **CSV e Excel**, permitindo explorar grandes volumes de dados de forma simples, eficiente e totalmente online.
+
+---
+
+## 🚀 Funcionalidades
+
+- 📂 Upload de arquivos CSV e Excel  
+- 🔍 Filtro por palavra-chave em todas as colunas  
+- 📈 Estatísticas descritivas automáticas  
+- ⚠️ Identificação de valores nulos por coluna  
+- 📊 Visualizações automáticas:
+  - Distribuição de colunas numéricas
+  - Contagem de valores categóricos  
+- ⬇️ Download dos dados filtrados em Excel  
+- ⚡ Suporte a arquivos grandes (7.000+ linhas)  
+- 🌐 Aplicação 100% online (não depende do computador do usuário)
+
+---
+
+## 🧠 Objetivo do Projeto
+
+Este projeto foi desenvolvido com o objetivo de **automatizar análises exploratórias de dados**, reduzindo o trabalho manual com planilhas e acelerando a geração de insights.
+
+É aplicável em diversos contextos, como:
+- Análises empresariais
+- Validação de bases de dados
+- Exploração inicial de datasets
+- Apoio a áreas como **RH, Financeiro, Vendas, Operações e TI**
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- Python  
+- Streamlit  
+- Pandas  
+- Matplotlib  
+- Seaborn  
+
+---
+
+## 🌍 Demonstração Online
+
+O aplicativo está hospedado na nuvem e pode ser acessado diretamente pelo navegador.
+
+> Basta fazer o upload de um arquivo para iniciar a análise.
+
+---
+
+## 📌 Diferenciais
+
+- Interface simples e intuitiva  
+- Foco em automação de processos  
+- Performance otimizada com cache  
+- Tratamento de erros  
+- Projeto pronto para uso em ambiente corporativo  
+- Deploy em nuvem (Streamlit Cloud)
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+Analise-arquivos/
+├── ANALISES.py
+├── requirements.txt
+└── README.md
+
+Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
+---
+
+
+
+
+
+
 
 📫 Contato
 
