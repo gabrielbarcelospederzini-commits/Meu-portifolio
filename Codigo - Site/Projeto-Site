@@ -1,0 +1,336 @@
+--------------------------------------------------------------------------------------------
+
+APP.PY
+
+
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+---------------------------------------------------------------------------------------------
+
+HTML 
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gabriel Pederzini • Software Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="hero-texto">
+        <h1>Olá, eu sou o Gabriel</h1>
+        <p>Seja bem-vindo(a) ao meu portfólio. Aqui você encontra meus projetos, estudos e soluções em tecnologia.</p>
+        <a href="#projetos" class="btn">Ver projetos</a>
+    </div>
+
+    <div class="hero-imagem">
+        <img 
+          src="{{ url_for('static', filename='Imagens/perfil.png') }}" 
+          alt="Foto de Gabriel">
+    </div>
+</header>
+
+<section class="sobre">
+    <h2>Sobre mim</h2>
+    <p>
+        Desenvolvedor em formação e apaixonado por tecnologia. Aqui você vai encontrar alguns dos meus projetos, minhas habilidades e um pouco da minha jornada no desenvolvimento de soluções backend, aplicações web e automações. Fique à vontade para explorar o site e conhecer melhor meu trabalho 
+    </p>
+</section>
+
+<section class="skills">
+    <h2>Habilidades</h2>
+    <div class="skills-grid">
+        <span>Python</span>
+        <span>Flask</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>JavaScript</span>
+    </div>
+</section>
+
+<section class="projetos" id="projetos">
+    <h2>Projetos</h2>
+
+    <div class="cards">
+
+        <!-- CARD COM CAROUSEL -->
+        <div class="card slider-projeto">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img src="{{ url_for('static', filename='Imagens/projetos/note1.png') }}" alt="Note Vision 1">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{ url_for('static', filename='Imagens/projetos/note2.png') }}" alt="Note Vision 2">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{ url_for('static', filename='Imagens/projetos/note3.png') }}" alt="Note Vision 3">
+                    </div>
+
+                </div>
+            </div>
+
+            <h3>Note Vision</h3>
+            <p>App leitor de cédulas focado em acessibilidade para pessoas com deficiência visual.</p>
+        </div>
+
+        <div class="card">
+            <h3>Analisador de Arquivos</h3>
+            <p>Aplicação em Python para análise e visualização de dados.</p>
+        </div>
+
+        <div class="card">
+            <h3>Dashboard de Logins</h3>
+            <p>Dashboard em Python e Streamlit para monitoramento de acessos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sistema de Monitoramento com IA</h3>
+            <p>Solução com inteligência artificial para análise e monitoramento.</p>
+        </div>
+
+        <div class="card">
+            <h3>Chat Bot - ArcelorMittal</h3>
+            <p>
+                Chatbot desenvolvido para automatizar processos internos, centralizar informações
+                e facilitar o atendimento dentro do ambiente corporativo.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="contato">
+    <h2>Contato</h2>
+    <p>📧 <a href="mailto:gabrielbarcelospederzini@gmail.com">gabrielbarcelospederzini@gmail.com</a></p>
+    <p>📸 Instagram: @Gabrielpederzini__</p>
+    <p>💼 <a href="https://www.linkedin.com/in/gabriel-pederzini-844304296" target="_blank">LinkedIn</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+});
+</script>
+
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------
+
+CSS
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0c0f19;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 10%;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url("Imagens/fundo.png") center/cover no-repeat;
+
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-texto h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #00b4ff;
+}
+
+.hero-texto p {
+    font-size: 1.4rem;
+    margin: 10px 0 25px;
+    opacity: .85;
+}
+
+.btn {
+    background: #00b4ff;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0094d8;
+    transform: scale(1.05);
+}
+
+.hero-imagem img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00b4ff;
+    box-shadow: 0 0 25px rgba(0,180,255,.4);
+    animation: float 3s ease-in-out infinite;
+}
+
+section {
+    width: 80%;
+    margin: 80px auto;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #00b4ff;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills-grid span {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: .3s;
+}
+
+.skills-grid span:hover {
+    background: #eeeff0;
+    transform: scale(1.07);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00b4ff;
+    box-shadow: 0 0 18px rgba(0,180,255,.3);
+}
+
+footer {
+    margin-top: 100px;
+    padding: 50px 10%;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.6rem;
+    }
+}
+
+.slider-projeto img {
+    width: 100%;
+    border-radius: 8px;
+}
+footer a {
+    color: #ffffff;          
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #00b4ff;          
+}
+.swiper {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 15px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+
