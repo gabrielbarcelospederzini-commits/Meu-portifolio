@@ -245,20 +245,16 @@ Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
 
 # 🌐 Site Portfólio Pessoal
 
-## 📌 Visão Geral
-Site portfólio desenvolvido para apresentar meus projetos, habilidades e informações profissionais de forma clara, moderna e organizada.  
+## 📋 Visão Geral
+Site portfólio ainda em desenvolvimento para apresentar meus projetos, habilidades e informações profissionais de forma clara, moderna e organizada.  
 O projeto serve como vitrine técnica para recrutadores e como base para evolução contínua da minha presença online como desenvolvedor.
-
-🔗 **Acesse o site:**  
-https://meu-portifolio-eqnharguezetq3dsgvh9.streamlit.app/
 
 ---
 
 ## ✨ Funcionalidades
-- Página inicial com apresentação profissional  
-- Seção dedicada a projetos  
+- Apresentação profissional na página inicial  
+- Exibição organizada dos projetos  
 - Layout limpo, moderno e responsivo  
-- Estrutura escalável para novas páginas e funcionalidades  
 - Tratamento de erros  
 - Projeto pronto para uso em ambiente corporativo  
 - Deploy em nuvem (Streamlit Cloud)  
@@ -273,41 +269,6 @@ https://meu-portifolio-eqnharguezetq3dsgvh9.streamlit.app/
 - **Git & GitHub**
 
 ---
-
-## 📂 Estrutura do Projeto
-Analise-arquivos/
-├── ANALISES.py # Arquivo principal da aplicação
-├── requirements.txt # Dependências do projeto
-└── README.md # Documentação do projeto
-
-
----
-
-## 🚀 Objetivo do Projeto
-- Centralizar projetos em um único ambiente  
-- Demonstrar boas práticas em Python e Streamlit  
-- Criar uma base sólida para evolução contínua  
-- Facilitar o acesso de recrutadores aos projetos  
-
----
-
-## 📌 Status do Projeto
-🟢 Concluído  
-🔧 Em constante evolução para melhorias visuais e novas funcionalidades
-
----
-
-## 🛣️ Roadmap
-- Refatoração contínua do código  
-- Inclusão de novos projetos no portfólio  
-- Melhorias de UX/UI  
-- Expansão das funcionalidades de análise  
-
----
-
-## 👨‍💻 Autor
-**Gabriel Pederzini**  
-Desenvolvedor de Software focado em criar soluções modernas, eficientes e escaláveis.
 
 
 
