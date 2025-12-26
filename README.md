@@ -238,7 +238,7 @@ Analise-arquivos/
 └── README.md
 
 Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
----
+------
 
 
 
@@ -267,17 +267,6 @@ O projeto serve como vitrine técnica para recrutadores e como base para evoluç
 - **HTML5**
 - **CSS3**
 - **Git & GitHub**
-
-
-
-
-
-
-
-
-
-
-
 
 
 
