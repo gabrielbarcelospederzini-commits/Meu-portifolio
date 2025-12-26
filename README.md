@@ -243,31 +243,6 @@ Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
 
 
 
-# 🌐 Site Portfólio Pessoal
-
-## 📋 Visão Geral
-Site portfólio ainda em desenvolvimento para apresentar meus projetos, habilidades e informações profissionais de forma clara, moderna e organizada.  
-O projeto serve como vitrine técnica para recrutadores e como base para evolução contínua da minha presença online como desenvolvedor.
-
----
-
-## ✨ Funcionalidades
-- Apresentação profissional na página inicial  
-- Exibição organizada dos projetos  
-- Layout limpo, moderno e responsivo  
-- Tratamento de erros  
-- Projeto pronto para uso em ambiente corporativo  
-- Deploy em nuvem (Streamlit Cloud)  
-
----
-
-## 🛠️ Tecnologias Utilizadas
-- **Python**
-- **Streamlit**
-- **HTML5**
-- **CSS3**
-- **Git & GitHub**
-
 
 
 
