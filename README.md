@@ -249,6 +249,9 @@ Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
 Site portfólio desenvolvido para apresentar meus projetos, habilidades e informações profissionais de forma clara, moderna e organizada.  
 O projeto serve como vitrine técnica para recrutadores e como base para evolução contínua da minha presença online como desenvolvedor.
 
+🔗 **Acesse o site:**  
+https://meu-portifolio-eqnharguezetq3dsgvh9.streamlit.app/
+
 ---
 
 ## ✨ Funcionalidades
@@ -256,64 +259,55 @@ O projeto serve como vitrine técnica para recrutadores e como base para evoluç
 - Seção dedicada a projetos  
 - Layout limpo, moderno e responsivo  
 - Estrutura escalável para novas páginas e funcionalidades  
+- Tratamento de erros  
+- Projeto pronto para uso em ambiente corporativo  
+- Deploy em nuvem (Streamlit Cloud)  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 - **Python**
-- **Flask**
+- **Streamlit**
 - **HTML5**
 - **CSS3**
-- **Jinja2**
 - **Git & GitHub**
 
 ---
 
 ## 📂 Estrutura do Projeto
-site-portfolio/
-├── app.py # Arquivo principal da aplicação Flask
+Analise-arquivos/
+├── ANALISES.py # Arquivo principal da aplicação
 ├── requirements.txt # Dependências do projeto
-├── README.md # Documentação do projeto
-│
-├── static/
-│ ├── style.css # Estilos do site
-│ └── img/ # Imagens e assets
-│
-└── templates/
-└── index.html # Página principal do portfólio
+└── README.md # Documentação do projeto
 
-yaml
-Copiar código
 
 ---
 
 ## 🚀 Objetivo do Projeto
-- Centralizar meus projetos em um único site  
-- Demonstrar boas práticas em desenvolvimento web  
-- Criar uma base sólida para futuras melhorias  
-- Facilitar o acesso de recrutadores ao meu trabalho  
+- Centralizar projetos em um único ambiente  
+- Demonstrar boas práticas em Python e Streamlit  
+- Criar uma base sólida para evolução contínua  
+- Facilitar o acesso de recrutadores aos projetos  
 
 ---
 
 ## 📌 Status do Projeto
-EM ANDAMENTO  
-🔧 Em constante evolução para melhorias visuais, novas seções e deploy online
+🟢 Concluído  
+🔧 Em constante evolução para melhorias visuais e novas funcionalidades
 
 ---
 
-## 🛣️ Roadmap (Próximas Evoluções)
-- Deploy em ambiente online  
-- Adição de novos projetos  
-- Melhorias em UX/UI  
-- Integração com LinkedIn e GitHub  
+## 🛣️ Roadmap
+- Refatoração contínua do código  
+- Inclusão de novos projetos no portfólio  
+- Melhorias de UX/UI  
+- Expansão das funcionalidades de análise  
 
 ---
 
 ## 👨‍💻 Autor
 **Gabriel Pederzini**  
 Desenvolvedor de Software focado em criar soluções modernas, eficientes e escaláveis.
-
-
 
 
 
