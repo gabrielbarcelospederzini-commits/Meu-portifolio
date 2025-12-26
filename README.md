@@ -229,9 +229,9 @@ O aplicativo está hospedado na nuvem e pode ser acessado diretamente pelo naveg
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
-```text
+
 Analise-arquivos/
 ├── ANALISES.py
 ├── requirements.txt
