@@ -245,17 +245,17 @@ Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
 
 # 🌐 Site Portfólio Pessoal
 
-Este projeto é um **site portfólio pessoal** desenvolvido para centralizar meus projetos, habilidades e informações profissionais em um único lugar, com foco em uma apresentação moderna, objetiva e profissional.
-
-O objetivo principal é servir como vitrine técnica para recrutadores e pessoas interessadas no meu trabalho como desenvolvedor.
+## 📌 Visão Geral
+Site portfólio desenvolvido para apresentar meus projetos, habilidades e informações profissionais de forma clara, moderna e organizada.  
+O projeto serve como vitrine técnica para recrutadores e como base para evolução contínua da minha presença online como desenvolvedor.
 
 ---
 
-## 🎯 Objetivo do Projeto
-- Apresentar meus projetos de forma clara e organizada  
-- Centralizar links, experiências e informações profissionais  
-- Demonstrar domínio em desenvolvimento web com Python  
-- Servir como base para evoluções futuras (deploy, animações, SEO, etc.)
+## ✨ Funcionalidades
+- Página inicial com apresentação profissional  
+- Seção dedicada a projetos  
+- Layout limpo, moderno e responsivo  
+- Estrutura escalável para novas páginas e funcionalidades  
 
 ---
 
@@ -269,43 +269,42 @@ O objetivo principal é servir como vitrine técnica para recrutadores e pessoas
 
 ---
 
-## ✨ Funcionalidades
-- Página inicial com apresentação pessoal  
-- Seção dedicada a projetos  
-- Layout responsivo e visual limpo  
-- Estrutura escalável para novas páginas e funcionalidades  
-
----
-
 ## 📂 Estrutura do Projeto
 site-portfolio/
-│
-├── app.py
-├── requirements.txt
-├── README.md
+├── app.py # Arquivo principal da aplicação Flask
+├── requirements.txt # Dependências do projeto
+├── README.md # Documentação do projeto
 │
 ├── static/
-│ ├── style.css
-│ └── img/
+│ ├── style.css # Estilos do site
+│ └── img/ # Imagens e assets
 │
 └── templates/
-└── index.html
+└── index.html # Página principal do portfólio
 
 yaml
 Copiar código
 
 ---
 
-## 📌 Status do Projeto
-EM ANDAMENTO  
-🔧 Em constante evolução para melhorias visuais e deploy online
+## 🚀 Objetivo do Projeto
+- Centralizar meus projetos em um único site  
+- Demonstrar boas práticas em desenvolvimento web  
+- Criar uma base sólida para futuras melhorias  
+- Facilitar o acesso de recrutadores ao meu trabalho  
 
 ---
 
-## 🚀 Próximos Passos (Roadmap)
+## 📌 Status do Projeto
+EM ANDAMENTO  
+🔧 Em constante evolução para melhorias visuais, novas seções e deploy online
+
+---
+
+## 🛣️ Roadmap (Próximas Evoluções)
 - Deploy em ambiente online  
 - Adição de novos projetos  
-- Animações e melhorias de UX/UI  
+- Melhorias em UX/UI  
 - Integração com LinkedIn e GitHub  
 
 ---
