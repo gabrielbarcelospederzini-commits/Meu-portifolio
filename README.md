@@ -268,7 +268,15 @@ O projeto serve como vitrine técnica para recrutadores e como base para evoluç
 - **CSS3**
 - **Git & GitHub**
 
----
+
+
+
+
+
+
+
+
+
 
 
 
