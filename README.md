@@ -243,6 +243,80 @@ Link do app: https://meu-portifolio-eqnqhargeuzetq3dsgvhv9.streamlit.app/
 
 
 
+# 🌐 Site Portfólio Pessoal
+
+Este projeto é um **site portfólio pessoal** desenvolvido para centralizar meus projetos, habilidades e informações profissionais em um único lugar, com foco em uma apresentação moderna, objetiva e profissional.
+
+O objetivo principal é servir como vitrine técnica para recrutadores e pessoas interessadas no meu trabalho como desenvolvedor.
+
+---
+
+## 🎯 Objetivo do Projeto
+- Apresentar meus projetos de forma clara e organizada  
+- Centralizar links, experiências e informações profissionais  
+- Demonstrar domínio em desenvolvimento web com Python  
+- Servir como base para evoluções futuras (deploy, animações, SEO, etc.)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+- **Python**
+- **Flask**
+- **HTML5**
+- **CSS3**
+- **Jinja2**
+- **Git & GitHub**
+
+---
+
+## ✨ Funcionalidades
+- Página inicial com apresentação pessoal  
+- Seção dedicada a projetos  
+- Layout responsivo e visual limpo  
+- Estrutura escalável para novas páginas e funcionalidades  
+
+---
+
+## 📂 Estrutura do Projeto
+site-portfolio/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── static/
+│ ├── style.css
+│ └── img/
+│
+└── templates/
+└── index.html
+
+yaml
+Copiar código
+
+---
+
+## 📌 Status do Projeto
+EM ANDAMENTO  
+🔧 Em constante evolução para melhorias visuais e deploy online
+
+---
+
+## 🚀 Próximos Passos (Roadmap)
+- Deploy em ambiente online  
+- Adição de novos projetos  
+- Animações e melhorias de UX/UI  
+- Integração com LinkedIn e GitHub  
+
+---
+
+## 👨‍💻 Autor
+**Gabriel Pederzini**  
+Desenvolvedor de Software focado em criar soluções modernas, eficientes e escaláveis.
+
+
+
+
 
 
 
